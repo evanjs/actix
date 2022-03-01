@@ -324,7 +324,7 @@
         <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="kw-2">mut</span> <span class="ident">subs</span>) <span class="op">=</span> <span class="self">self</span>.<span class="ident">take_subs</span>::<span class="op">&lt;</span><span class="ident">M</span><span class="op">&gt;</span>() {
             <span class="ident">subs</span>.<span class="ident">drain</span>(..)
                 .<span class="ident">filter_map</span>(<span class="op">|</span>(<span class="ident">id</span>, <span class="ident">s</span>)<span class="op">|</span> {
-                    <span class="kw">if</span> <span class="ident">id</span> <span class="op">==</span> <span class="ident">msg</span>.<span class="number">1</span> <span class="op">|</span><span class="op">|</span> <span class="ident">s</span>.<span class="ident">do_send</span>(<span class="ident">msg</span>.<span class="number">0</span>.<span class="ident">clone</span>()).<span class="ident">is_ok</span>() {
+                    <span class="kw">if</span> <span class="ident">id</span> <span class="op">==</span> <span class="ident">msg</span>.<span class="number">1</span> <span class="op">|</span><span class="op">|</span> <span class="ident">s</span>.<span class="ident">try_send</span>(<span class="ident">msg</span>.<span class="number">0</span>.<span class="ident">clone</span>()).<span class="ident">is_ok</span>() {
                         <span class="prelude-val">Some</span>((<span class="ident">id</span>, <span class="ident">s</span>))
                     } <span class="kw">else</span> {
                         <span class="prelude-val">None</span>
@@ -386,5 +386,5 @@
     }
 }
 </code></pre></div>
-</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="actix_broker" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.60.0-nightly (75d9a0ae2 2022-02-16)" ></div>
+</section><section id="search" class="content hidden"></section></div></main><div id="rustdoc-vars" data-root-path="../../" data-current-crate="actix_broker" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.61.0-nightly (4ce374923 2022-02-28)" ></div>
 </body></html>
